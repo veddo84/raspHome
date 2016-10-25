@@ -1,5 +1,6 @@
 import kivy
 import ConfigParser
+import subprocess
 from subprocess import Popen, PIPE
 from kivy.app import App
 import os
@@ -21,7 +22,10 @@ class GuestWLAN(Screen):
 class MenuUI(Screen):
     pass
 class Mopidy(Screen):
-    pass
+
+    def runMopedi(self):
+        print ('Run Mopidy')
+        subprocess.call('mopidy')
 
 
 

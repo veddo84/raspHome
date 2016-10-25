@@ -172,19 +172,24 @@ ScreenManagement:
     padding: 20
     spacing: 10
     GridLayout:
-        cols:3
+        cols:2
         orientation: 'vertical'
         padding: 20
         spacing: 10
-        size: root.size
+
 
         Button:
+            size:root.width - 100, root.height / 2
             text: 'SERVER STARTEN'
+            on_release:
+                root.runMopedi()
         Button:
             text: 'MUSIC EINLESEN'
         Button:
+            size:root.width - 100, root.height / 2
             text: 'Einstellungen'
         Button:
+            size:root.width - 100, root.height / 2
             text: 'Zurück'
             on_release:
                 root.manager.transition.direction = 'right'
