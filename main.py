@@ -1,6 +1,6 @@
 import kivy
 import ConfigParser
-import subprocess
+from subprocess import Popen, PIPE
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.boxlayout import BoxLayout
@@ -84,7 +84,11 @@ class ScreenManagement(ScreenManager):
 class PowerOff(Screen):
 
     def powerOffRPI(self):
-           subprocess.call(["ls", "-l"])
+        print "Reebooting .."
+        reboot_statement = "sudo shutdown -r -f now"
+        popen_args = reboot_statement.split(" ")
+        Popen(popen_args, stdout=PIPE, stderr=PIPE)
+
 
 
 
