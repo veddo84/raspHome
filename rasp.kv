@@ -156,8 +156,10 @@ ScreenManagement:
         Button:
             size: 200, 150
             text: 'Herunterfahren'
+            on_release:
+                root.shutdownRPI()
         Button:
             size: 100, 150
             text: 'Neu Starten'
             on_release:
-                root.powerOffRPI()
+                root.rebootRPI()

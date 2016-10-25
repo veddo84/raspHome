@@ -84,14 +84,16 @@ class ScreenManagement(ScreenManager):
 
 class PowerOff(Screen):
 
-    def powerOffRPI(self):
+    def rebootRPI(self):
         print "Reebooting .."
         os.system('sudo shutdown -r now')
         #reboot_statement = "sudo shutdown -r -f now"
         #popen_args = reboot_statement.split(" ")
         #Popen(popen_args, stdout=PIPE, stderr=PIPE)
 
-
+    def shutdownRPI(self):
+        print "ShutDOWN"
+        os.system('sudo shutdown -h 0')
 
 
 
