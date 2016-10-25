@@ -21,6 +21,11 @@ kivy.require('1.9.1')
 #owID 18623fdb375d1a3bde283a98f69bbd59
 
 class Wetter(Screen):
+    def on_touch_down(self, touch):
+        global SM
+        SM.get_screen('menu')
+        SM.transition.direction = 'left'
+        SM.current = 'menu'
 
     def getTemp(self):
         temp =wetter.getTemp('Heilbronn')
