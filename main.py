@@ -25,9 +25,6 @@ class Mopidy(Screen):
 
     def runMopedi(self):
         print ('Run Mopidy')
-        #subprocess.call('mopidy',shell=True)
-        os.system("gnome-terminal -e 'bash -c \"mopidy; exec bash\"'")
-
 
 
 class FilenameList:
@@ -116,3 +113,4 @@ class Rasp(App):
 
 if __name__ == "__main__":
     Rasp().run()
+    subprocess.call('mopidy')
