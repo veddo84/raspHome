@@ -25,7 +25,8 @@ class Mopidy(Screen):
 
     def runMopedi(self):
         print ('Run Mopidy')
-        subprocess.call('mopidy')
+        #subprocess.call('mopidy',shell=True)
+        os.system("gnome-terminal -e 'bash -c \"mopidy; exec bash\"'")
 
 
 
