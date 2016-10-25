@@ -21,4 +21,3 @@ class Weather():
 
 w= Weather()
 
-w.getTemp('Heilbronn')

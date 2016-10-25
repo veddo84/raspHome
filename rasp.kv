@@ -97,11 +97,19 @@ ScreenManagement:
             pos: self.pos
             size: self.size
             source: 'pictures/heilbronn.jpg'
-            Label:
-                text:'HEILBRONN'
-                text_size: self.size
-                halign: 'right'
-                valign: 'middle'
+    FloatLayout:
+        Label:
+            text_size: self.size
+            font_size: 44
+            halign: 'left'
+            valign: 'top'
+            text: 'Heilbronn'
+        Label:
+
+            font_size: 22
+            size_hint: 0.9,1.7
+            text:'Temparatur beträgt '+root.getTemp()+'° Celsius'
+
 
 <WLAN>:
     name: 'wlan'

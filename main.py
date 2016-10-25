@@ -1,36 +1,34 @@
 import kivy
 from wetter import w as wetter
 import ConfigParser
-import subprocess
-import openweather
-from subprocess import Popen, PIPE
 from kivy.app import App
 import os
-from kivy.uix.gridlayout import GridLayout
-from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
-from kivy.uix.image import Image
 from glob import glob
 from os.path import join, dirname
 from kivy.properties import ObjectProperty, StringProperty
-from kivy.uix.widget import Widget
 from kivy.clock import Clock
+from kivy.uix.label import Label
+import time
 from datetime import datetime
 kivy.require('1.9.1')
 
 #owID 18623fdb375d1a3bde283a98f69bbd59
 
 class Wetter(Screen):
+
     def on_touch_down(self, touch):
         global SM
         SM.get_screen('menu')
-        SM.transition.direction = 'left'
+        SM.transition.direction = 'down'
         SM.current = 'menu'
+    def setLable(self):
+        l = Label(text='Hello world')
+        return l
 
     def getTemp(self):
         temp =wetter.getTemp('Heilbronn')
-
-        return temp['temp_min']
+        return str(temp['temp_min'])
 
 
 class GuestWLAN(Screen):
@@ -129,4 +127,4 @@ class Rasp(App):
 
 if __name__ == "__main__":
     Rasp().run()
-    subprocess.call('mopidy')
+    #subprocess.call('mopidy')
