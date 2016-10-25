@@ -10,12 +10,17 @@ from kivy.properties import ObjectProperty, StringProperty
 from kivy.clock import Clock
 from kivy.uix.label import Label
 import time
+from datetime import date
 from datetime import datetime
 kivy.require('1.9.1')
 
 #owID 18623fdb375d1a3bde283a98f69bbd59
 
 class Wetter(Screen):
+
+    def dateToday(self):
+
+        return str(date.today())
 
     def on_touch_down(self, touch):
         global SM
@@ -26,9 +31,9 @@ class Wetter(Screen):
         l = Label(text='Hello world')
         return l
 
-    def getTemp(self):
+    def getTemp(self,val):
         temp =wetter.getTemp('Heilbronn')
-        return str(temp['temp_min'])
+        return str(temp[val])
 
 
 class GuestWLAN(Screen):

@@ -103,12 +103,15 @@ ScreenManagement:
             font_size: 44
             halign: 'left'
             valign: 'top'
-            text: 'Heilbronn'
+            text: ' Heilbronn, den '+root.dateToday()
         Label:
-
             font_size: 22
             size_hint: 0.9,1.7
-            text:'Temparatur beträgt '+root.getTemp()+'° Celsius'
+            text:'Die Minimale Temparatur für Heute beträgt '+root.getTemp('temp_min')+'° Celsius'
+        Label:
+            font_size: 22
+            size_hint: 1,1.6
+            text:'Die Maximale Temparatur für Heute beträgt '+root.getTemp('temp_max')+'° Celsius'
 
 
 <WLAN>:

@@ -10,8 +10,7 @@ class Weather():
         observation = owm.weather_at_place(city)
         w = observation.get_weather()
         temp=w.get_temperature('celsius')
-        print temp['temp_min']
-        print temp['temp_max']
+
         return temp
 
     def forecast(self, city):
