@@ -5,6 +5,7 @@ ScreenManagement:
     MenuUI:
     PowerOff:
     Mopidy:
+    Wetter:
 
 <SlideShow>:
     name: 'slideshow'
@@ -68,6 +69,9 @@ ScreenManagement:
                 allow_stretch: True
         Button:
             size: 100,100
+            on_release:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'Wetter'
             Image:
                 source:"icons/IKONS/PNG/128/brightness_low.png"
                 center_x: self.parent.center_x
@@ -85,6 +89,20 @@ ScreenManagement:
                 center_y: self.parent.center_y
                 size:100, 100
                 allow_stretch: True
+
+<Wetter>:
+    name:'Wetter'
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'pictures/heilbronn.jpg'
+            Label:
+                text:'HEILBRONN'
+                text_size: self.size
+                halign: 'right'
+                valign: 'middle'
+
 <WLAN>:
     name: 'wlan'
     wlanssid: ''

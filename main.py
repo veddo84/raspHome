@@ -1,6 +1,8 @@
 import kivy
+from wetter import w as wetter
 import ConfigParser
 import subprocess
+import openweather
 from subprocess import Popen, PIPE
 from kivy.app import App
 import os
@@ -15,6 +17,15 @@ from kivy.uix.widget import Widget
 from kivy.clock import Clock
 from datetime import datetime
 kivy.require('1.9.1')
+
+#owID 18623fdb375d1a3bde283a98f69bbd59
+
+class Wetter(Screen):
+
+    def getTemp(self):
+        temp =wetter.getTemp('Heilbronn')
+
+        return temp['temp_min']
 
 
 class GuestWLAN(Screen):
