@@ -4,6 +4,7 @@ ScreenManagement:
     WLAN:
     MenuUI:
     PowerOff:
+    Mopidy:
 
 <SlideShow>:
     name: 'slideshow'
@@ -44,6 +45,9 @@ ScreenManagement:
 
         Button:
             size: 100,100
+            on_release:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'stream'
             Image:
                 source:"icons/IKONS/PNG/128/music.png"
                 center_x: self.parent.center_x
@@ -163,3 +167,25 @@ ScreenManagement:
             text: 'Neu Starten'
             on_release:
                 root.rebootRPI()
+<Mopidy>:
+    name:'stream'
+    padding: 20
+    spacing: 10
+    GridLayout:
+        cols:3
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+        size: root.size
+
+        Button:
+            text: 'SERVER STARTEN'
+        Button:
+            text: 'MUSIC EINLESEN'
+        Button:
+            text: 'Einstellungen'
+        Button:
+            text: 'Zurück'
+            on_release:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'menu'

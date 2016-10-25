@@ -17,12 +17,13 @@ kivy.require('1.9.1')
 
 
 class GuestWLAN(Screen):
-     pass
-
+    pass
 class MenuUI(Screen):
+    pass
+class Mopidy(Screen):
+    pass
 
-    def Test_Function(self):
-        print"test"
+
 
 class FilenameList:
     filename = []
@@ -96,8 +97,6 @@ class PowerOff(Screen):
         os.system('sudo shutdown -h 0')
 
 
-
-
 class Rasp(App):
     def build(self):
         global SM
@@ -107,7 +106,7 @@ class Rasp(App):
         SlideShow.addDirectory('/var/guestwlan/images')
         # Diashow starten
         SlideShow.update()
-        Clock.schedule_interval(SlideShow.next, 8)
+        Clock.schedule_interval(SlideShow.next, 10)
         return SM
 
 if __name__ == "__main__":
