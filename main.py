@@ -2,6 +2,7 @@ import kivy
 import ConfigParser
 from subprocess import Popen, PIPE
 from kivy.app import App
+import os
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
@@ -85,9 +86,10 @@ class PowerOff(Screen):
 
     def powerOffRPI(self):
         print "Reebooting .."
-        reboot_statement = "sudo shutdown -r -f now"
-        popen_args = reboot_statement.split(" ")
-        Popen(popen_args, stdout=PIPE, stderr=PIPE)
+        os.system('sudo shutdown -r now')
+        #reboot_statement = "sudo shutdown -r -f now"
+        #popen_args = reboot_statement.split(" ")
+        #Popen(popen_args, stdout=PIPE, stderr=PIPE)
 
 
 
