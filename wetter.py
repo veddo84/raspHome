@@ -10,7 +10,7 @@ class Weather():
         observation = owm.weather_at_place(city)
         w = observation.get_weather()
         temp=w.get_temperature('celsius')
-
+        print temp
         return temp
 
     def forecast(self, city):
@@ -19,4 +19,4 @@ class Weather():
         print forecast.will_have_sun()
 
 w= Weather()
-
+w.getTemp('Heilbronn')
